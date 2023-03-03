@@ -30,8 +30,8 @@ function updateDate() {
 
 	let tasksUl = document.querySelectorAll("#reminder-list li");
     tasksUl = Array.from(tasksUl).sort((a,b)=>a.getAttribute('hora')-b.getAttribute('hora')).filter(item => item.getAttribute('id')!='hidden')
-    // console.log(tasksUl)
     updateLayout()
+    
 	for (let t = 0; t < tasksUl.length; t++){
         document.querySelector("#reminder-list").appendChild(tasksUl[t])
 		if(tasksUl[t].classList.contains(`date-${date.getFullYear()}${date.getMonth()}`)) {
