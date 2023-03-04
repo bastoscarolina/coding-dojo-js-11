@@ -20,8 +20,20 @@ function createLi(hour, message) {
   <div>${message}</div>
   <div>${hour}</div>
  `;
+ 	createDeleteButton(createItem);
 	return createItem;
 }
+
+function createDeleteButton(li) {
+	const deleteButton = document.createElement('button')
+	deleteButton.innerText = 'Delete';
+	li.appendChild(deleteButton)
+
+	deleteButton.addEventListener('click', () => {
+		deleteButton.parentElement.remove();
+	})
+}
+
 
 const date = new Date();
 
